@@ -262,11 +262,17 @@ document.addEventListener('DOMContentLoaded', () => {
         body: formData
       });
       
-      if (!response.ok) {
+      let data;
+      try {
+        data = await response.json();
+      } catch (e) {
         throw new Error(`HTTP Error: ${response.status}`);
       }
       
-      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.error || `HTTP Error: ${response.status}`);
+      }
+      
       displayResults(data);
       
     } catch (err) {
