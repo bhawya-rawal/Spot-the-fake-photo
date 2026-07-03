@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Set this to your external backend API URL if deploying frontend & backend separately
   // e.g. 'https://username-spot-the-fake-photo.hf.space'
-  const BACKEND_URL = '';
+  const BACKEND_URL = 'https://bhawyarawal-spot-the-fake-photo.hf.space';
+
 
 
   // -------------------------------------------------------------
