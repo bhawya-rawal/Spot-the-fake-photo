@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spot the Fake Photo - Live Detection Demo</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="glow-container">
+    <div class="glow-sphere sphere-1"></div>
+    <div class="glow-sphere sphere-2"></div>
+  </div>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-user-shield"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Spot the Fake</h1>
+          <p>Advanced Photo Detection Suite</p>
+        </div>
+      </div>
+      <div class="status-badge">
+        <span class="pulse-dot"></span>
+        <span>Live Model Active</span>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <!-- Interactive Input Area -->
+      <section class="card input-section">
+        <div class="tabs">
+          <button class="tab-btn active" id="tab-upload">
+            <i class="fa-solid fa-cloud-arrow-up"></i> Upload Image
+          </button>
+          <button class="tab-btn" id="tab-camera">
+            <i class="fa-solid fa-camera"></i> Live Camera
+          </button>
+        </div>
+
+        <div class="tab-content">
+          <!-- Upload Panel -->
+          <div class="panel active" id="panel-upload">
+            <div class="drag-drop-zone" id="drop-zone">
+              <input type="file" id="file-input" accept="image/*" class="file-hidden">
+              <div class="upload-icon">
+                <i class="fa-solid fa-images"></i>
+              </div>
+              <h3>Drag & drop your photo here</h3>
+              <p>Supports JPEG, PNG, WEBP formats</p>
+              <button class="btn btn-primary" id="browse-btn">Browse Files</button>
+            </div>
+          </div>
+
+          <!-- Camera Panel -->
+          <div class="panel" id="panel-camera">
+            <div class="camera-wrapper">
+              <video id="webcam" autoplay playsinline muted></video>
+              <canvas id="camera-canvas" class="hidden-canvas"></canvas>
+              
+              <div class="camera-controls">
+                <div class="select-wrapper" id="camera-select-container">
+                  <i class="fa-solid fa-sliders"></i>
+                  <select id="camera-select">
+                    <option value="">Loading cameras...</option>
+                  </select>
+                </div>
+                <button class="btn btn-danger" id="capture-btn">
+                  <i class="fa-solid fa-circle"></i> Capture Photo
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Preview and Results area -->
+      <section class="card display-section">
+        <!-- Image Preview Container -->
+        <div class="preview-container" id="preview-container">
+          <div class="preview-placeholder" id="preview-placeholder">
+            <i class="fa-regular fa-image"></i>
+            <p>Upload a photo or capture one to run spoofing analysis</p>
+          </div>
+          <img id="preview-image" src="" alt="Preview" class="hidden">
+          <div class="scan-overlay" id="scan-overlay">
+            <div class="scan-line"></div>
+          </div>
+        </div>
+
+        <!-- Analysis Results Container -->
+        <div class="results-container" id="results-container">
+          <div class="results-placeholder" id="results-placeholder">
+            <i class="fa-solid fa-chart-simple"></i>
+            <p>Analysis metrics will be displayed here</p>
+          </div>
+
+          <div class="results-content hidden" id="results-content">
+            <div class="verdict-banner" id="verdict-banner">
+              <div class="verdict-icon" id="verdict-icon">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+              </div>
+              <div class="verdict-text">
+                <h4 id="verdict-title">Verdict</h4>
+                <p id="verdict-subtitle">Analysis confidence status</p>
+              </div>
+            </div>
+
+            <div class="gauge-section">
+              <div class="gauge-header">
+                <span>Fake Probability</span>
+                <span id="probability-value">0%</span>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" id="probability-bar"></div>
+              </div>
+            </div>
+
+            <div class="details-section">
+              <div class="detail-row">
+                <span class="detail-label"><i class="fa-solid fa-shield-halved"></i> Security Verdict</span>
+                <span class="detail-val" id="detail-verdict">-</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label"><i class="fa-solid fa-gauge-high"></i> Confidence Score</span>
+                <span class="detail-val" id="detail-confidence">-</span>
+              </div>
+            </div>
+
+            <button class="btn btn-secondary" id="reset-btn">
+              <i class="fa-solid fa-rotate-left"></i> Run Another Scan
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>&copy; 2026 Spot the Fake. Designed for live photo spoofing prevention and analysis.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

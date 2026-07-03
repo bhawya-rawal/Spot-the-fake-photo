@@ -1,0 +1,12 @@
+numpy
+opencv-python-headless
+scikit-image
+scipy
+pytest
+scikit-learn
+lightgbm
+xgboost
+matplotlib
+fastapi
+python-multipart
+uvicorn

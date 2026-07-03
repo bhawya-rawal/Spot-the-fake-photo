@@ -1,0 +1,29 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.DS_Store
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.tmp
+*.log
+
+# Local editor state
+.vscode/
+.idea/
+
+# Generated caches and build artifacts
+coverage/
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Keep only the required model artifact tracked
+!model.pkl
+
+# Generated evaluation artifacts and data bundles should not be pushed
+metrics.json
+dataset_summary.json
+analysis/
+dataset/
