@@ -1,5 +1,16 @@
+---
+title: Spot the Fake Photo
+emoji: 🛡️
+colorFrom: indigo
+colorTo: purple
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # Spot the Fake Photo
 ### Classical Computer Vision & Machine Learning Pipeline for Screen Recapture Detection
+
 
 A lightweight, production-oriented computer vision system that detects whether an image is a **genuine photograph** or a **photo of a digital screen (screen recapture)**.
 
