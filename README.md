@@ -1,12 +1,3 @@
----
-title: Spot the Fake Photo
-emoji: 🛡️
-colorFrom: indigo
-colorTo: purple
-sdk: docker
-app_port: 7860
-pinned: false
----
 
 # Spot the Fake Photo
 ### Classical Computer Vision & Machine Learning Pipeline for Screen Recapture Detection
